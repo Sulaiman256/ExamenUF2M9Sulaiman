@@ -24,22 +24,16 @@
             text-align: center;
         }
         
-        @keyframes caerTitulo {
-            0% {
-                top: -50px;
-                opacity: 0;
-            }
-            60% {
-                top: 10px;
-                opacity: 1;
-            }
-            80% {
-                top: -5px;
-            }
-            100% {
-                top: 0;
-            }
-        }
+       @keyframes caerTitulo {
+    0% {
+        top: 0px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
         
         .contenedorPrincipal {
             display: flex;
@@ -126,7 +120,7 @@
         
         #minutos {
             transform-origin: center;
-            animation: rotarMinutos 60s linear infinite;
+            animation: rotarMinutos 5s linear infinite;
         }
         
         #horas {
