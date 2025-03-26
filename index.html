@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen UF2 M9 Sulaiman El Taha Santos</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            animation: caerTitulo 1.5s ease-out;
+            position: relative;
+        }
+        
+        @keyframes caerTitulo {
+            0% {
+                top: -50px;
+                opacity: 0;
+            }
+            60% {
+                top: 10px;
+                opacity: 1;
+            }
+            80% {
+                top: -5px;
+            }
+            100% {
+                top: 0;
+            }
+        }
+        
+        .contenedor {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .relojContenedor {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .imgEinstein {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .minutos, .horas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes rotarMinutos {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes rotarHoras {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes deslizarMensaje {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        #minutos {
+            transform-origin: center;
+            animation: rotarMinutos 60s linear infinite;
+        }
+        
+        #horas {
+            transform-origin: center;
+            animation: rotarHoras 120s linear infinite;
+        }
+        
+        .mensaje {
+            background-color: white;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            margin-left: 20px;
+            display: none;
+        }
+        
+        .contenedor:hover .mensaje {
+            display: block;
+            animation: deslizarMensaje 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Examen m9 uf2 - Animaciones</h1>
+        <div class="contenedor">
+            <div class="relojContenedor">
+                <img class="imgEinstein" src="./einstein.avif" alt="Einstein">
+                <div class="minutos">
+                    <svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 400 400"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <line
+                            id="minutos"
+                            x1="200"
+                            y1="200"
+                            x2="200"
+                            y2="30"
+                            stroke="blue"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </div>
+                <div class="horas">
+                    <svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 400 400"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <line
+                            id="horas"
+                            x1="200"
+                            y1="200"
+                            x2="200"
+                            y2="80"
+                            stroke="red"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </div>
+            </div>
+            <div class="mensaje">
+                El tiempo es relativo
+            </div>
+        </div>
+    </div>
+</body>
+</html>
